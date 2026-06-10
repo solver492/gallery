@@ -2,7 +2,7 @@ workflows:
   android-workflow:
     name: Android Build
     max_build_duration: 60
-    instance_type: linux_x2
+    instance_type: linux_x4
     environment:
       java: 17
     scripts:
@@ -13,6 +13,6 @@ workflows:
       - name: Build debug APK
         script: |
           cd Android
-          build_command: ./gradlew assembleDebug
+          ./gradlew assembleDebug
     artifacts:
       - Android/app/build/outputs/**/*.apk
