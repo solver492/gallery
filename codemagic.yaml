@@ -7,11 +7,11 @@ workflows:
     scripts:
       - name: Set gradlew permissions
         script: |
-          cd Android
+          cd Android/src
           chmod +x ./gradlew
       - name: Build debug APK
         script: |
-          cd Android
+          cd Android/src
           ./gradlew assembleDebug
     artifacts:
-      - Android/app/build/outputs/**/*.apk
+      - Android/src/app/build/outputs/**/*.apk
